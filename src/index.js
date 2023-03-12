@@ -18,6 +18,7 @@ function onInput(e) {
   const countrySearch = value.trim();
 
   if (!countrySearch) {
+    clearList();
     addHidden();
     return;
   }
@@ -32,7 +33,6 @@ function onInput(e) {
       renderCounry(country);
     })
     .catch(() => {
-      clearList();
       onFetchError();
     });
 }
